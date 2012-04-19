@@ -2,6 +2,14 @@
 
 one:
   name: MyString
+  eventtype: MyString
+  location: MyString
+  startdate: 2012-04-19 15:46:14
+  enddate: 2012-04-19 15:46:14
 
 two:
   name: MyString
+  eventtype: MyString
+  location: MyString
+  startdate: 2012-04-19 15:46:14
+  enddate: 2012-04-19 15:46:14

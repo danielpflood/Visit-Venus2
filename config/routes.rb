@@ -1,4 +1,6 @@
 VisitVenus::Application.routes.draw do
+  resources :events
+
   get "pages/home"
 
   get "pages/contact"
@@ -6,8 +8,6 @@ VisitVenus::Application.routes.draw do
   get "pages/media"
 
   get "pages/forum"
-
-  resources :events
   
   root :to => "pages#home"
   # The priority is based upon order of creation:

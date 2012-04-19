@@ -5,6 +5,26 @@
   <%= @event.name %>
 </p>
 
+<p>
+  <b>Eventtype:</b>
+  <%= @event.eventtype %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @event.location %>
+</p>
+
+<p>
+  <b>Startdate:</b>
+  <%= @event.startdate %>
+</p>
+
+<p>
+  <b>Enddate:</b>
+  <%= @event.enddate %>
+</p>
+
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
