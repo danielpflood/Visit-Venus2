@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Visit Venus | <%= @title %></title> 
+	<%= stylesheet_link_tag :style %>
+  	<%= javascript_include_tag :application %>
+  	<%= csrf_meta_tag %>
+  	</head>
+  <body>
+	<div id="wrap">
+		<div id="header">
+			<h1>Visit Venus | <%= @title %></h1>
+			
+		</div><!-- end header -->
+		<div id="navbar">
+			<ul>
+				<li><a href="/pages/home">Home</a></li>
+				<li><a href="/pages/contact">Contact</a></li>
+				<li><a href="/pages/media">Media</a></li> 
+				<li><a href="/pages/forum">Forum</a></li>
+			</ul>
+		</div><!-- end navbar -->
+		<div id="content">
+			<%= yield %>
+			
+		</div><!-- end content -->
+		<div id="sidebar">
+		</div><!-- end sidebar -->
+		<div id="bottom">
+			<div class="bottom-left">
+			</div>
+			<div class="bottom-middle">
+			</div>
+			<div class="bottom-right">
+			</div>
+		</div>
+		<div id="footer">
+			<p>21 Valley Lane<br />
+			Venus, Florida 33960 USA</p>
+		</div><!-- end footer -->
+	</div><!-- end wrap -->
+  </body>
+</html>
