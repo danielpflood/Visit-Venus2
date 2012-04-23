@@ -41,8 +41,17 @@
 			<%= yield %>
 			
 		</div><!-- end content -->
-		<div id="sidebar">
-		</div><!-- end sidebar -->
+		<% if current_page?(:controller => 'events') %>
+			<script type="text/javascript">
+				$(document).ready(function() {
+				  $("#content").width(945);
+				});
+			</script>
+		<% else %>
+			<div id="sidebar">
+				<p>Sidebar</p>
+			</div><!-- end sidebar -->
+		<% end %>
 		<div id="bottom">
 			<div class="bottom-left">
 			</div>
@@ -53,7 +62,15 @@
 		</div>
 		<div id="footer">
 			<p>21 Valley Lane<br />
-			Venus, Florida 33960 USA</p>
+			Venus, Florida 33960 USA<%= image_tag('smalllogo.png', :class => "smalllogo") %></p>
+			
+			<ul>
+				<li><a href="/pages/home">Home</a></li>
+				<li><a href="/events">Events</a></li>
+				<li><a href="/pages/contact">Contact</a></li>
+				<li><a href="/pages/media">Media</a></li> 
+				<li><a href="/pages/forum">Forum</a></li>
+			</ul>
 		</div><!-- end footer -->
 	</div><!-- end wrap -->
   </body>
