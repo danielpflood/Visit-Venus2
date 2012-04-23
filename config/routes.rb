@@ -1,6 +1,11 @@
 VisitVenus::Application.routes.draw do
-  resources :events
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "log_out" => "sessions#destroy", :as => "log_out"
 
+  get "sign_up" => "users#new", :as => "sign_up"
+
+  resources :events
+  resources :sessions
   get "pages/home"
 
   get "pages/contact"
@@ -10,6 +15,7 @@ VisitVenus::Application.routes.draw do
   get "pages/forum"
   
   root :to => "pages#home"
+  resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

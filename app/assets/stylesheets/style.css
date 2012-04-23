@@ -52,6 +52,11 @@ a {
 	display: inline;
 	border: 1px solid #ccc;
 	}
+	
+#user_nav{
+	position:relative;
+	float: right;
+}
 
 
 #content {
@@ -140,7 +145,7 @@ a {
 }
 
 a:hover {
-	color: #33f;
+	font-weight: bold;
 	text-decoration: underline;
 }
 

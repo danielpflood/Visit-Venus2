@@ -20,8 +20,24 @@
 				<li><a href="/pages/media">Media</a></li> 
 				<li><a href="/pages/forum">Forum</a></li>
 			</ul>
+			<div id="user_nav">
+			  <% if current_user %>
+			    Logged in as <%= current_user.email %>.
+			    <%= link_to "Log out", log_out_path %>
+			  <% else %>
+			    <%= link_to "Sign up", sign_up_path %> or
+			    <%= link_to "log in", log_in_path %>
+			  <% end %>
+			</div>
 		</div><!-- end navbar -->
 		<div id="content">
+			
+
+			<% flash.each do |name, msg| %>
+			  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+			<% end %>
+
+			
 			<%= yield %>
 			
 		</div><!-- end content -->
