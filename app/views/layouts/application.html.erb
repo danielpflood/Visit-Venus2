@@ -14,7 +14,7 @@
 		</div><!-- end header -->
 		<div id="navbar">
 			<ul>
-				<li><a href="/pages/home">Home</a></li>
+				<li><%= link_to "Home", root_path %></li>
 				<li><a href="/events">Events</a></li>
 				<li><a href="/pages/contact">Contact</a></li>
 				<li><a href="/pages/media">Media</a></li> 
@@ -31,17 +31,18 @@
 			</div>
 		</div><!-- end navbar -->
 		<div id="content">
-			
+			<!--DEBUGGIN PURPOSES<p><%= request.path_parameters %><br />
+				<%= request.fullpath %></p>-->
 
 			<% flash.each do |name, msg| %>
 			  <%= content_tag :div, msg, :id => "flash_#{name}" %>
 			<% end %>
 
 			
-			<%= yield %>
+			<%= yield %> 
 			
 		</div><!-- end content -->
-		<% if current_page?(:controller => 'events') %>
+		<% if current_page?(:controller => 'events') || current_page?(:controller => 'pages', :action => 'home') ||  request.fullpath.to_s == "/" %>
 			<script type="text/javascript">
 				$(document).ready(function() {
 				  $("#content").width(945);

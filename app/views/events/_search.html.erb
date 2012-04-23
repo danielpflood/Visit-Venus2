@@ -1,0 +1,14 @@
+<div id="detailedsearch">
+<h2>Search for event:</h2>
+<%= form_tag events_path, :method => 'get', :id => "events_search" do %>
+  <p>
+	Name: <%= text_field_tag :name, params[:name] %>&nbsp;&nbsp;&nbsp;
+	Type: <%= text_field_tag :type, params[:type] %>&nbsp;&nbsp;&nbsp;
+	Location: <%= text_field_tag :location, params[:location] %><br />
+	Start Date: <%= datetime_select :startdate, params[:startdate] %><br />
+	End Date:&nbsp;&nbsp; <%= datetime_select :enddate, params[:enddate] %><br />
+	
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+</div>

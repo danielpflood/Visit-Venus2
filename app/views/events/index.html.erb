@@ -1,33 +1,6 @@
-<%= form_tag events_path do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
+<%= render "events/search" %>
+<div id="eventsdiv"><%= render "events/events" %></div>
 
 
 
-<h1>Listing events</h1>
-
-<table id="events">
-<thead>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Location</th>
-    <th>Start</th>
-    <th>End</th>
-  </tr></thead>
-<tbody>
-<% @events.each do |event| %>
-  <tr>
-    <td><%= event.name %></td>
-    <td><%= event.eventtype %></td>
-    <td><%= event.location %></td>
-    <td><%= event.startdate %></td>
-    <td><%= event.enddate %></td>
-  </tr>
-<% end %>
-</tbody>
-</table>
 

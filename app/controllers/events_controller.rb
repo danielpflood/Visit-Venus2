@@ -3,11 +3,12 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @title = "Events" 
-      @events = Event.search(params[:search])
-    
+    @events = Event.search(params)
+  
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @events }
+      format.js # index.js.erb 
     end
   end
 

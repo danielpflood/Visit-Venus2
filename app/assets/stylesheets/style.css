@@ -172,8 +172,13 @@ h1, h2, h3, h4, h1 a, h2 a, h3 a, h4 a {
 	font-size: 1.6em;
 }
 
-
 p {
 	margin: 0 0 1.0em 0;
 	padding: 0;
+}
+#detailedsearch{
+	padding-bottom:20px;
+}
+#detailedsearch p{
+	line-height:300%;
 }

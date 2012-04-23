@@ -4,3 +4,4 @@
 jQuery ->
   $('#events').dataTable
     sPaginationType: "full_numbers"
+

@@ -2,5 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #events{
-padding:20px;
+	padding:20px;
+	
+}
+#events_wrapper.dataTables_wrapper{
+	background-color:#eee;
+	padding:10px;
+	padding-bottom:30px;
 }
