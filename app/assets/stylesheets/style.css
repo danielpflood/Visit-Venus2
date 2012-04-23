@@ -182,3 +182,14 @@ p {
 #detailedsearch p{
 	line-height:300%;
 }
+#imgbox 
+{
+    vertical-align : middle;
+    border: 1px solid #999;
+    background : #FFFFFF; 
+    filter: Alpha(Opacity=100);
+    visibility : hidden;
+    width : 300px;
+    z-index : 50;
+    text-align : center;
+}

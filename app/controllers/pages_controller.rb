@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 
   def media
     @title="Media"
+     
   end
 
   def forum
