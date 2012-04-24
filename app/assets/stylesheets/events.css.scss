@@ -5,8 +5,26 @@
 	padding:20px;
 	
 }
+#events td{
+	padding:20px;
+	border: 1px solid #ccc;
+}
 #events_wrapper.dataTables_wrapper{
 	background-color:#eee;
 	padding:10px;
 	padding-bottom:30px;
+}
+
+th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+th .asc {
+  background-image: url(/assets/up_arrow.gif);
+}
+
+th .desc {
+  background-image: url(/assets/down_arrow.gif);
 }

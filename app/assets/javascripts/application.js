@@ -12,6 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require dataTables/jquery.dataTables
 //= require eventsstuff
 //= require_tree .

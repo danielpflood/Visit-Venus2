@@ -1,0 +1,11 @@
+find_header: checking for sqlite3.h... -------------------- no
+
+"cpp -I. -I/usr/local/lib/ruby/1.8/i386-freebsd8 -I. -I/usr/include   -I/usr/include  -I/usr/include -O2 -pipe -fno-strict-aliasing  -fPIC    conftest.c -o conftest.i"
+conftest.c:1:21: error: sqlite3.h: No such file or directory
+checked program was:
+/* begin */
+1: #include <sqlite3.h>
+/* end */
+
+--------------------
+
