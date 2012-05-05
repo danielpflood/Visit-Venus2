@@ -2,8 +2,10 @@
 
 <table>
   <tr>
+    <th>Id</th>
     <th>Title</th>
-    <th>Description</th>
+    <th>Board</th>
+    <th>User</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +13,10 @@
 
 <% @conversations.each do |conversation| %>
   <tr>
+    <td><%= conversation.id %></td>
     <td><%= conversation.title %></td>
-    <td><%= conversation.description %></td>
+    <td><%= conversation.board_id %></td>
+    <td><%= conversation.user_id %></td>
     <td><%= link_to 'Show', conversation %></td>
     <td><%= link_to 'Edit', edit_conversation_path(conversation) %></td>
     <td><%= link_to 'Destroy', conversation, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -1,5 +1,6 @@
+
 class CreateComments < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :comments do |t|
       t.integer :id
       t.integer :user_id
@@ -10,5 +11,9 @@ class CreateComments < ActiveRecord::Migration
     end
     add_index :comments, :conversation_id
     add_index :comments, :user_id
+  end
+
+  def self.down
+    drop_table :comments
   end
 end

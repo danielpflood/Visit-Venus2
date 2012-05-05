@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120430201518) do
+ActiveRecord::Schema.define(:version => 20120505001710) do
+
+  create_table "boards", :force => true do |t|
+    t.string   "title",      :limit => 50
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -24,12 +30,15 @@ ActiveRecord::Schema.define(:version => 20120430201518) do
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "conversations", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "forum_id"
+    t.string   "title",      :limit => 50
+    t.integer  "board_id"
+    t.integer  "user_id"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
+
+  add_index "conversations", ["board_id"], :name => "index_conversations_on_board_id"
+  add_index "conversations", ["user_id"], :name => "index_conversations_on_user_id"
 
   create_table "events", :force => true do |t|
     t.string   "name"

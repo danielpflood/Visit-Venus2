@@ -1,15 +1,18 @@
 class CreateConversations < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :conversations do |t|
       t.integer :id
       t.string :title, :limit => 50
-      t.integer :forum_id
+      t.integer :board_id
       t.integer :user_id
-      t.text :description
 
       t.timestamps
     end
-    add_index :conversations, :forum_id
+    add_index :conversations, :board_id
     add_index :conversations, :user_id
+  end
+
+  def self.down
+    drop_table :conversations
   end
 end
