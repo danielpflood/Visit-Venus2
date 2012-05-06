@@ -13,4 +13,21 @@ class UsersController < ApplicationController
       render "new"
     end
   end 
+  
+  def show
+    @user = User.find(params[:id])
+  end
+    
+    private
+
+      def is_user
+        if User.exists?(params[:id])
+          @user = User.find(params[:id]);
+          if !current_user || current_user.id != @user.id
+            redirect_to(homepage_url, :notice =>"You do not have access to that page")
+          end
+        else
+          redirect_to(homepage_url, :notice =>"You do not have access to that page")
+        end
+      end
 end

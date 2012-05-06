@@ -1,3 +1,4 @@
 class Board < ActiveRecord::Base
-  attr_accessible :id, :title
+  attr_accessible :title
+  has_many :conversations
 end

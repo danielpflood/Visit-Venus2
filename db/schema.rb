@@ -50,13 +50,6 @@ ActiveRecord::Schema.define(:version => 20120505001710) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "forums", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "password_hash"
@@ -64,16 +57,6 @@ ActiveRecord::Schema.define(:version => 20120505001710) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.boolean  "admin"
-  end
-
-  create_table "vevents", :force => true do |t|
-    t.string   "name"
-    t.string   "eventtype"
-    t.string   "location"
-    t.datetime "startdate"
-    t.datetime "enddate"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
 end

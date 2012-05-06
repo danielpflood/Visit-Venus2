@@ -1,15 +1,29 @@
+<h1 id="page_title"><%= @board.title %></h1>
 <p id="notice"><%= notice %></p>
+<%= link_to 'Rails Boards', boards_path %> &gt; <%= link_to @board.title, @board %> <br />
 
-<p>
-  <b>Id:</b>
-  <%= @board.id %>
-</p>
+<table>
+  <tr>
+    <th>Post / Author</th>
+    <th>Last Reply</th>
+    <th>Number of Replies</th>
+  </tr>
+<% @board.conversations.each do |conversation| %>
+  <tr>
+    <td>
+      <%= link_to conversation.title, board_conversation_path(:board_id => @board, :id => conversation) %><br />
+      <%= conversation.user.email %>
+    </td>
+    <td>
+      <%= conversation.comments.find(:last).created_at %><br />
+      by <%= conversation.comments.find(:last).user.email %>
+    </td>
+    <td>
+      <%= conversation.comments.count - 1%>
+    </td>
+  </tr>
+<% end %>
+</table>
+    
 
-<p>
-  <b>Title:</b>
-  <%= @board.title %>
-</p>
-
-
-<%= link_to 'Edit', edit_board_path(@board) %> |
-<%= link_to 'Back', boards_path %>
+<%= link_to 'Post New Message', new_board_conversation_url(@board) %>

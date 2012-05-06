@@ -1,16 +1,20 @@
 VisitVenus::Application.routes.draw do
 
-  resources :comments
-
-  resources :conversations
-
-  resources :boards
+  resources :boards do
+    resources :conversations
+  end
+  
 
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
 
   get "sign_up" => "users#new", :as => "sign_up"
-
+  
+  
+  get '/boards/:board_id/conversations/:id/reply' => "conversations#reply", :as => :reply_board_conversation
+  post '/boards/:board_id/conversations/:id/reply' => "conversations#save_reply", :as => :reply_board_conversation
+  
+  
   resources :events
   resources :sessions
   get "pages/home"
