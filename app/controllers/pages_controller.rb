@@ -15,4 +15,7 @@ class PagesController < ApplicationController
   def forum
     @title="Forum"
   end
+  def visiting
+    @title="Visiting"
+  end
 end

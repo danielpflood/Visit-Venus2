@@ -5,9 +5,8 @@
   <p>
 	Name: <%= text_field_tag :name, params[:name] %>&nbsp;&nbsp;&nbsp;
 	Type: <%= text_field_tag :type, params[:type] %>&nbsp;&nbsp;&nbsp;
-	Location: <%= text_field_tag :location, params[:location] %><br />
-	Start Date: <%= datetime_select :startdate, params[:startdate] %><br />
-	End Date:&nbsp;&nbsp; <%= datetime_select :enddate, params[:enddate] %><br />
+	Location: <%= text_field_tag :location, params[:location] %>
+	Date: <%= text_field_tag :date, params[:date] %>&nbsp;&nbsp;
 	
     <%= submit_tag "Search", :name => nil %>
   </p>

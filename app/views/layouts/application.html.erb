@@ -19,14 +19,17 @@
 				<li><a href="/pages/contact">Contact</a></li>
 				<li><a href="/pages/media">Media</a></li> 
 				<li><a href="/boards">Forum</a></li>
+				<% if current_user %>
+				<li><a href="/pages/visiting">Visiting</a></li>
+				<% end %>
 			</ul>
 			<div id="user_nav">
-			  <% if current_user %>
+			   <% if current_user %>
 			    Logged in as <%= current_user.email %>.
 			    <%= link_to "Log out", log_out_path %>
 			  <% else %>
-			    <%= link_to "Sign up", sign_up_path %> or
-			    <%= link_to "log in", log_in_path %>
+			    For more information on visiting please <%= link_to "Sign Up", sign_up_path %> or
+			    <%= link_to "Log In", log_in_path %>
 			  <% end %>
 			</div>
 		</div><!-- end navbar -->
@@ -42,7 +45,7 @@
 			<%= yield %> 
 			
 		</div><!-- end content -->
-		<% if current_page?(:controller => 'events') || current_page?(:controller => 'pages', :action => 'home') ||  request.fullpath.to_s == "/" %>
+		<% if current_page?(:controller => 'events') || current_page?(:controller => 'pages', :action => 'home') ||  current_page?(:controller => 'pages', :action => 'media') ||  request.fullpath.to_s == "/" %>
 			<script type="text/javascript">
 				$(document).ready(function() {
 				  $("#content").width(945);
@@ -70,7 +73,7 @@
 				<li><a href="/events">Events</a></li>
 				<li><a href="/pages/contact">Contact</a></li>
 				<li><a href="/pages/media">Media</a></li> 
-				<li><a href="/pages/forum">Forum</a></li>
+				<li><a href="/boards">Forum</a></li>
 			</ul>
 		</div><!-- end footer -->
 	</div><!-- end wrap -->

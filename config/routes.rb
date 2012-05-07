@@ -22,8 +22,8 @@ VisitVenus::Application.routes.draw do
   get "pages/contact"
 
   get "pages/media"
-
-  get "pages/forum"
+    
+  get "pages/visiting"
   
   root :to => "pages#home"
   resources :users

@@ -3,7 +3,7 @@ class BoardsController < ApplicationController
   # GET /boards.json
   def index
     @boards = Board.all
-
+    @title = "Message Boards"
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @boards }

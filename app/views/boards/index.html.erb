@@ -1,13 +1,17 @@
-<h1 id="page_title">Message Boards</h1>
+
 <p id="notice"><%= notice %></p>
 <table>
-  <tr>
-    <th align="left">Title</th>
-  </tr>
-
 <% @boards.each do |board| %>
   <tr>
-    <td><%= link_to board.title, board %></td>
+    <td><h1><%= link_to board.title, board %></h1></td>
   </tr>
 <% end %>
 </table>
+<br />
+<br />
+<% if current_user %>
+    <a href="/boards/new">Make New Board</a>
+  <% else %>
+    <%= link_to "Sign up", sign_up_path %> or
+    <%= link_to "log in", log_in_path %> to create a new message board.
+  <% end %>

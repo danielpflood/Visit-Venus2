@@ -5,7 +5,7 @@ namespace :db do
     require 'faker'
     
     [Event].each(&:delete_all)
-    Event.populate 1..10 do |event|
+    Event.populate 1..50 do |event|
       event.location = Populator.words(1..3).titleize
       event.name = Populator.words(1..2).titleize
       event.eventtype = Populator.words(1).titleize
